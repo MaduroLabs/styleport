@@ -1,0 +1,21 @@
+:root {
+  --brand-primary: #2563eb;
+  --space-3: 12px;
+  --radius-md: 8px;
+}
+
+body {
+  color: #111827;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.button-primary {
+  background-color: var(--brand-primary);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background-color 150ms ease;
+}
+
+@media (max-width: 640px) {
+  .page-shell { padding: 12px; }
+}

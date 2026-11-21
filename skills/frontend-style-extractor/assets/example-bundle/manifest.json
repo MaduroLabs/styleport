@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "producer": "frontend-style-extractor (illustrative example)",
+  "source": {
+    "project": "mini-source-example",
+    "framework": "React",
+    "styling": "plain CSS with custom properties"
+  },
+  "scope": {
+    "inspected": ["Shared button", "Body typography", "Small-screen page padding"],
+    "notInspected": ["Real browser rendering", "Complex form and table components"]
+  },
+  "visualVerification": "not_performed",
+  "limitations": ["Illustrative synthetic source. Not derived from a real customer project."]
+}
