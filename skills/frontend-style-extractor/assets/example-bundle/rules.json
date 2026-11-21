@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "rules": [
+    {
+      "id": "typography.body.base",
+      "category": "typography",
+      "appliesTo": ["body text"],
+      "requirement": "Use the source font stack at 16px for base body text; maintain usable fallback fonts.",
+      "priority": "required",
+      "origin": "observed",
+      "confidence": "high",
+      "tokenRefs": ["typography.body.family", "typography.body.size"],
+      "evidence": [{"kind": "code", "reference": "src/styles.css:9", "detail": "body declaration"}],
+      "exceptions": []
+    },
+    {
+      "id": "component.button.primary",
+      "category": "component",
+      "appliesTo": ["primary action button"],
+      "requirement": "Use primary background, 12px padding and 8px corner radius. Keep native button semantics.",
+      "priority": "required",
+      "origin": "observed",
+      "confidence": "high",
+      "tokenRefs": ["color.brand.primary", "spacing.scale.3", "radius.medium"],
+      "evidence": [{"kind": "code", "reference": "src/styles.css:16", "detail": "button-primary style"}],
+      "exceptions": ["Not a rule for destructive buttons"]
+    },
+    {
+      "id": "interaction.focus.button",
+      "category": "interaction",
+      "appliesTo": ["keyboard-focused primary buttons"],
+      "requirement": "Provide a 3px visible focus outline with 2px offset; honor user agent focus behavior.",
+      "priority": "required",
+      "origin": "observed",
+      "confidence": "high",
+      "tokenRefs": ["color.focus.ring"],
+      "evidence": [{"kind": "code", "reference": "src/styles.css:23", "detail": ":focus-visible"}],
+      "exceptions": []
+    },
+    {
+      "id": "responsive.shell.small",
+      "category": "responsive",
+      "appliesTo": ["page shell at widths <= 640px"],
+      "requirement": "At small widths, reduce page shell padding to the 12px spacing token.",
+      "priority": "recommended",
+      "origin": "observed",
+      "confidence": "high",
+      "tokenRefs": ["breakpoint.mobile.max", "spacing.scale.3"],
+      "evidence": [{"kind": "code", "reference": "src/styles.css:27", "detail": "small-screen media query"}],
+      "exceptions": ["Apply only where a page shell exists"]
+    },
+    {
+      "id": "accessibility.motion.reduced",
+      "category": "accessibility",
+      "appliesTo": ["primary button animations"],
+      "requirement": "Disable decorative transition under prefers-reduced-motion: reduce.",
+      "priority": "required",
+      "origin": "observed",
+      "confidence": "high",
+      "tokenRefs": ["motion.duration.fast"],
+      "evidence": [{"kind": "code", "reference": "src/styles.css:30", "detail": "reduced-motion media query"}],
+      "exceptions": []
+    }
+  ]
+}
