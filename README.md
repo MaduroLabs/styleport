@@ -1,5 +1,7 @@
 # StylePort
 
+[![skills.sh](https://skills.sh/b/MaduroLabs/styleport)](https://skills.sh/MaduroLabs/styleport)
+
 Portable design systems for AI coding agents. StylePort packages two reusable Agent Skills:
 
 - `frontend-style-extractor` documents an existing frontend as a framework-neutral Portable Design System Bundle.
